@@ -459,7 +459,7 @@
 <p>数据纷繁复杂，我们不可能将所有的数据都进行分析，无论是从时间和空间上都是不现实的，因此在生物信息学（尤其是NGS组学）中数据降维几乎是一个无法逃避的主题。</p>
 <p>那么究竟什么是数据降维呢？简单来说就是只保留那些在不同的组别（对bulk RNA-seq而言就是不同的样本，对scRNA-seq而言就是不同的细胞）中具有较大差异的特征，而舍弃掉那些非常“均一”的特征，所谓“拨云见日”。</p>
 <p>数据降维究竟有什么实际应用呢？一个最简单的应用就是找到一个群体中相似的个体，而这一点也被大家广泛地应用到NGS测序数据质量评估中：一般而言，我们会给同一个生物学条件下准备多个生物学重复，我们更期待不同样品的组内差异小于组间差异，只有这样才能说明我们的数据可重复性好，实验条件更加稳定。</p>
-<h1 id="1-常见数据降维方法"><a href="#1-常见数据降维方法" class="headerlink" title="1. 常见数据降维方法"></a>1. 常见数据降维方法</h1><p>生物学中的数据降维方法都是从机器学习领域借鉴过来的，目前常用的主要包括线性降维的PCA（principal component analysis，主成分分析）、非线性降维的tSNE（t-Distribution Stochastic Neighbour Embedding）与UMAP（Uniform Manifold Approximation and Projection for Dimension Reduction）等。</p>
+<h1 id="1-常见数据降维方法"><a href="#1-常见数据降维方法" class="headerlink" title="1 常见数据降维方法"></a>1 常见数据降维方法</h1><p>生物学中的数据降维方法都是从机器学习领域借鉴过来的，目前常用的主要包括线性降维的PCA（principal component analysis，主成分分析）、非线性降维的tSNE（t-Distribution Stochastic Neighbour Embedding）与UMAP（Uniform Manifold Approximation and Projection for Dimension Reduction）等。</p>
 <ul>
 <li>PCA：</li>
 </ul>
@@ -471,7 +471,7 @@
 <li>tSNE与UMAP</li>
 </ul>
 <p>t-SNE与UMAP主要的优势就是保持非线性的局部结构的能力，比较适用于样本量较大，样本之间相互关系比较复杂的数据，所以在单细胞转录组的可视化中有大量应用。需要注意的是，这两种将为的方法通常只应用于数据的可视化。</p>
-<h1 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h1><p>在本部分我将从数据的预处理到降维分析可视化的过程用R语言进行展示。</p>
+<h1 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2 代码实现"></a>2 代码实现</h1><p>在本部分我将从数据的预处理到降维分析可视化的过程用R语言进行展示。</p>
 <h2 id="2-1-数据预处理"><a href="#2-1-数据预处理" class="headerlink" title="2.1 数据预处理"></a>2.1 数据预处理</h2><p>在进行降维分析之前，首先必须要做的一个工作就是数据的预处理，其中非常关键的一步就是scale（有时可以翻译为“归一化”）。简单来说，未经处理的数据可能具有非常大的变异度，这可能会对后续的分析产生影响，具体来说，以RNA-seq为例：不同的基因具有不同的表达水平，有些基因表达水平很高，有的很低；同一个基因在不同的生物学条件下表达的差异也不同，有的“岿然不动”，有的“闻风而动”，甚至具有非常大的差异。用鲁志老师的tutorial来说，对涉及距离计算的模型而言，在实际应用中，不同特征的数值大小不同，会在求距离时造成很大的影响。例如，一个基因的表达量很高，另一个基因的表达量很低，如果不进行数据的归一化，表达量高的基因就会主导距离的计算。</p>
 <p>在R语言中我们常用的就是使用z-score里进行归一化：</p>
 <script type="math/tex; mode=display">
@@ -551,7 +551,7 @@ ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
   theme_test()
 </code></pre>
 <p><img src="https://files.mdnice.com/user/41526/66988b00-4895-49dc-865a-51c8aefd3042.png" alt=""></p>
-<h1 id="3-写在最后"><a href="#3-写在最后" class="headerlink" title="3. 写在最后"></a>3. 写在最后</h1><p>推荐一个学习网站：清华大学鲁志实验室的Bioinformatics Tutorial，点击原文即可跳转哦！</p>
+<h1 id="3-写在最后"><a href="#3-写在最后" class="headerlink" title="3 写在最后"></a>3 写在最后</h1><p>推荐一个学习网站：清华大学鲁志实验室的Bioinformatics Tutorial，点击原文即可跳转哦！</p>
 
                 
             </div>
