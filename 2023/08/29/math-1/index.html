@@ -438,7 +438,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    29
+                    35
                 </div>
                 
 
@@ -464,8 +464,30 @@
 <li><p>函数的在某点的极限</p>
 <p>若<script type="math/tex">\forall \epsilon > 0</script>，<script type="math/tex">\exists \delta > 0</script>，当<script type="math/tex">0 < |x-a| < \delta</script>时恒有：</p>
 <script type="math/tex; mode=display">
-|f_{(x)}-A|<\epsilon</script><p>其中<script type="math/tex">A\in R</script>，则称<script type="math/tex">lim_{x\rightarrow a}f_{(x)}=A</script>，或称<script type="math/tex">x\rightarrow a</script>时，<script type="math/tex">f_{(x)}</script>有有限极限A。</p>
+|f_{(x)}-A|<\epsilon</script><p>其中<script type="math/tex">A\in \R</script>，则称<script type="math/tex">lim_{x\rightarrow a}f_{(x)}=A</script>，或称<script type="math/tex">x\rightarrow a</script>时，<script type="math/tex">f_{(x)}</script>有有限极限A。</p>
+<ul>
+<li><p>单侧极限</p>
+<p>若对<script type="math/tex">\forall \epsilon > 0</script>，<script type="math/tex">\exists \delta > 0</script>，当<script type="math/tex">0<x-a<\delta</script>时恒有：</p>
+<script type="math/tex; mode=display">
+|f_{(x)}-A|<\epsilon</script><p>其中<script type="math/tex">A\in\R</script>，则称<script type="math/tex">lim_{x\rightarrow a^+}f_{(x)}=A</script>，简记为<script type="math/tex">f_{(a^+)}=A</script>。</p>
+<p><strong>左极限同理。</strong></p>
 </li>
+</ul>
+</li>
+<li><p>数列的极限</p>
+<p>若<script type="math/tex">\forall \epsilon > 0</script>，<script type="math/tex">\exists N \in \N</script>，当<script type="math/tex">n>N</script>时恒有：</p>
+<script type="math/tex; mode=display">
+|x_n-A|<\epsilon</script><p>其中<script type="math/tex">A\in \R</script>，则称<script type="math/tex">lim_{n\rightarrow \infty}x_n=A</script>，或称<script type="math/tex">\{x_n\}</script>收敛于<script type="math/tex">A</script>。</p>
+<p><u>数列不存在某点的极限，因为其本身不是连续型。</u></p>
+</li>
+<li><p>夹逼准则</p>
+<p>若函数<script type="math/tex">f_{(x)}</script>，<script type="math/tex">g_{(x)}</script>，<script type="math/tex">h_{(x)}</script>在<script type="math/tex">x=a</script>的某<em>去心邻域<script type="math/tex">I</script></em>内有定义，且<script type="math/tex">\forall x \in I</script>都有</p>
+<script type="math/tex; mode=display">
+g_{(x)}\le f_{(x)} \le h_{(x)}</script><p>若：</p>
+<script type="math/tex; mode=display">
+lim_{x\rightarrow a}g_{(x)} = lim_{x\rightarrow a}h_{(x)} = A (or \pm \infty)</script><p>则：</p>
+<script type="math/tex; mode=display">
+lim_{x\rightarrow a}f_{(x)} = A(or \pm \infty)</script></li>
 </ul>
 
                 
