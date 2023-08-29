@@ -524,6 +524,52 @@ lim_{x \rightarrow a}\frac{\alpha{(x)}f(x)}{\gamma{(x)}g(x)} = lim_{x \rightarro
 lim_{x \rightarrow a}f(x) = f(a)</script><p>则称<script type="math/tex">f(x)</script>在<script type="math/tex">x=a</script>连续。</p>
 <p>若函数在<script type="math/tex">f(x)</script>在区间<script type="math/tex">I</script>上每一点连续，称<script type="math/tex">f</script>在区间<script type="math/tex">I</script>上连续。</p>
 </li>
+<li><p>函数左连续与右连续</p>
+<p>设函数<script type="math/tex">f(x)</script>在<script type="math/tex">x=a</script>的左（右）邻域内有定义，若：</p>
+<script type="math/tex; mode=display">
+f(a-) = lim_{x \rightarrow a^-}f(x) = f(a) (f(a+) = lim_{x \rightarrow a^+}f(x) = f(a))</script><p>称<script type="math/tex">f(x)</script>在<script type="math/tex">x=a</script>左（右）连续。</p>
+<p>**<script type="math/tex">f(x)</script>在<script type="math/tex">x=a</script>连续的充要条件是<script type="math/tex">f(x)</script>在<script type="math/tex">x=a</script>左连续且右连续。</p>
+</li>
+<li><p>连续函数的运算性质</p>
+<ul>
+<li><p>函数<script type="math/tex">f(x)</script>与<script type="math/tex">g(x)</script>在<script type="math/tex">x=a</script>皆连续，则<script type="math/tex">f(x) \pm g(x)</script>，<script type="math/tex">f(x) \cdot g(x)</script>，<script type="math/tex">\frac{f(x)}{g(x)}(g(a) \ne 0)</script>在<script type="math/tex">x=a</script>也连续；</p>
+</li>
+<li><p>若<script type="math/tex">f(u)</script>在<script type="math/tex">u=u_0</script>连续，<script type="math/tex">u=\phi(x)</script>在<script type="math/tex">x=x_0</script>连续，且<script type="math/tex">u_0=\phi(x_0)</script>，则<script type="math/tex">f(\phi(x))</script>在<script type="math/tex">x=x_0</script>连续，即：</p>
+<script type="math/tex; mode=display">
+lim_{x\rightarrow x_0}f(\phi(x)) = f(lim_{x\rightarrow x_0}\phi(x)) = f(\phi(x_0))</script></li>
+</ul>
+</li>
+<li><p>间断点分类</p>
+<p>若函数<script type="math/tex">f(x)</script>在<script type="math/tex">x=a</script>不连续，则称<script type="math/tex">x=a</script>为<script type="math/tex">f(x)</script>的间断点，间断点可以分为两类：</p>
+<ul>
+<li>当<script type="math/tex">f(a-)</script>和<script type="math/tex">f(a+)</script>皆为有限数的时候，称<script type="math/tex">x=a</script>为第一类间断点；<ul>
+<li>若<script type="math/tex">f(a-)=f(a+)</script>，则称<script type="math/tex">x=a</script>为可去型；</li>
+<li>若<script type="math/tex">f(a-) \ne f(a+)</script>，则称<script type="math/tex">x=a</script>为跳跃型；</li>
+</ul>
+</li>
+<li>当<script type="math/tex">f(a-)</script>和<script type="math/tex">f(a+)</script>中有一个不为有限数时，称<script type="math/tex">x=a</script>为第二类间断点；<ul>
+<li>若<script type="math/tex">f(a-)</script>和<script type="math/tex">f(a+)</script>中有一个等于<script type="math/tex">\infty</script>时，则称<script type="math/tex">x=a</script>为无穷型。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>闭区间上连续函数的性质</p>
+<ul>
+<li><p><strong>有界定理</strong>    若函数<script type="math/tex">f(x)</script>在<script type="math/tex">[a,b]</script>连续，则<script type="math/tex">\exists K>0</script>，使得：</p>
+<script type="math/tex; mode=display">
+|f(x)|\le K, \forall x \in [a,b]</script></li>
+<li><p><strong>最值定理</strong>    若函数<script type="math/tex">f(x)</script>在<script type="math/tex">[a,b]</script>连续，则<script type="math/tex">\exists x_1, x_2 \in [a,b]</script>，使得：</p>
+<script type="math/tex; mode=display">
+f(x_1)\le f(x)\le f(x_2), \forall x \in [a,b]</script></li>
+<li><p><strong>介值定理</strong>    若函数<script type="math/tex">f(x)</script>在<script type="math/tex">[a,b]</script>连续，<script type="math/tex">f(a)<f(b)</script>，则<script type="math/tex">\forall \mu \in (f(a),f(b))</script>，必<script type="math/tex">\exists \epsilon \in (a,b)</script>，使得：</p>
+<script type="math/tex; mode=display">
+f(\epsilon) = \mu</script></li>
+<li><p><strong>零点定理</strong>    若函数<script type="math/tex">f(x)</script>在<script type="math/tex">[a,b]</script>连续，<script type="math/tex">f(a)f(b)<0</script>，则<script type="math/tex">\exists \epsilon \in (a,b)</script>使得：</p>
+<script type="math/tex; mode=display">
+f(\epsilon) = 0</script><p>称<script type="math/tex">\epsilon</script>为<script type="math/tex">f(x)</script>的零点。</p>
+</li>
+</ul>
+</li>
 </ul>
 
                 
@@ -786,12 +832,12 @@ lim_{x \rightarrow a}f(x) = f(a)</script><p>则称<script type="math/tex">f(x)</
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Experiment/" class="post-category">
-                                    Experiment
-                                </a>
-                            
                             <a href="/categories/RNA-biology/" class="post-category">
                                     RNA biology
+                                </a>
+                            
+                            <a href="/categories/Experiment/" class="post-category">
+                                    Experiment
                                 </a>
                             
                             <a href="/categories/Experiment/RNA/" class="post-category">
@@ -805,12 +851,12 @@ lim_{x \rightarrow a}f(x) = f(a)</script><p>则称<script type="math/tex">f(x)</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Experimental-protocol/">
-                        <span class="chip bg-color">Experimental protocol</span>
-                    </a>
-                    
                     <a href="/tags/RNA-biology/">
                         <span class="chip bg-color">RNA biology</span>
+                    </a>
+                    
+                    <a href="/tags/Experimental-protocol/">
+                        <span class="chip bg-color">Experimental protocol</span>
                     </a>
                     
                 </div>
