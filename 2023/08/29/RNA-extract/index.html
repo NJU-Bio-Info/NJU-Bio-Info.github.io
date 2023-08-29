@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Dimension Reduction and High dimensional Data Visualization, Working space for NJU-Bio-Infor">
+    <meta name="keywords" content="RNA_extract, Working space for NJU-Bio-Infor">
     <meta name="description" content="This is the personal working space for NJU-Bio-Infor. Welcome to visit and give advice.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Dimension Reduction and High dimensional Data Visualization | Working space for NJU-Bio-Infor</title>
+    <title>RNA_extract | Working space for NJU-Bio-Infor</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -278,12 +278,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Dimension Reduction and High dimensional Data Visualization</h1>
+                    <h1 class="description center-align post-title">RNA_extract</h1>
                 </div>
             </div>
         </div>
@@ -399,8 +399,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Advanced-math/">
-                                <span class="chip bg-color">Advanced math</span>
+                            <a href="/tags/RNA-biology/">
+                                <span class="chip bg-color">RNA biology</span>
+                            </a>
+                        
+                            <a href="/tags/Experimental-protocol/">
+                                <span class="chip bg-color">Experimental protocol</span>
                             </a>
                         
                     </div>
@@ -411,8 +415,16 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Advanced-math/" class="post-category">
-                                Advanced math
+                            <a href="/categories/RNA-biology/" class="post-category">
+                                RNA biology
+                            </a>
+                        
+                            <a href="/categories/Experiment/" class="post-category">
+                                Experiment
+                            </a>
+                        
+                            <a href="/categories/Experiment/RNA/" class="post-category">
+                                RNA
                             </a>
                         
                     </div>
@@ -424,7 +436,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-28
+                    2023-08-29
                 </div>
                 
 
@@ -438,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    318
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -460,107 +472,61 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>生物本身就是一个复杂的体系，我们必须使用多维数据来对之进行准确描述，而这一点在生物信息学领域体现的尤为突出，以经典的转录组数据为例：</p>
-<ul>
-<li>bulk RNA-seq作为一种经典的基因相对表达量定量方法广泛应用于各种研究中，如果我们在一个课题中对4个样品进行了bulk RNA-seq测序，那么我们将得到一个4*N维的矩阵，这里N就是全基因组范围内能转录的基因。</li>
-<li>scRNA-seq是近十年来蓬勃发展的一种分辨率更高的RNA-seq，如果我们进行测序的组织样本中含有10000个细胞，那么我们在最后将得到一个10000*N维的矩阵。</li>
+                <h1 id="1-Reagents-list"><a href="#1-Reagents-list" class="headerlink" title="1 Reagents list"></a>1 Reagents list</h1><ul>
+<li>RNA isolater Total RNA Extraction Reagent, Vazyme, Cat #R401-01</li>
+<li>FreeZol Reagent, Vazyme, Cat #R711 (alternative)</li>
+<li>100% ethanol (EtOH)</li>
+<li>100% isopropanol (IPA)</li>
+<li>DEPC H<sub>2</sub>O, Beyotime, Cat #R0021</li>
+<li>1.5mL RNase-free EP tube</li>
+<li>RNase-free pipettor</li>
+<li>ice</li>
 </ul>
-<p>数据纷繁复杂，我们不可能将所有的数据都进行分析，无论是从时间和空间上都是不现实的，因此在生物信息学（尤其是NGS组学）中数据降维几乎是一个无法逃避的主题。</p>
-<p>那么究竟什么是数据降维呢？简单来说就是只保留那些在不同的组别（对bulk RNA-seq而言就是不同的样本，对scRNA-seq而言就是不同的细胞）中具有较大差异的特征，而舍弃掉那些非常“均一”的特征，所谓“拨云见日”。</p>
-<p>数据降维究竟有什么实际应用呢？一个最简单的应用就是找到一个群体中相似的个体，而这一点也被大家广泛地应用到NGS测序数据质量评估中：一般而言，我们会给同一个生物学条件下准备多个生物学重复，我们更期待不同样品的组内差异小于组间差异，只有这样才能说明我们的数据可重复性好，实验条件更加稳定。</p>
-<h1 id="1-常见数据降维方法"><a href="#1-常见数据降维方法" class="headerlink" title="1 常见数据降维方法"></a>1 常见数据降维方法</h1><p>生物学中的数据降维方法都是从机器学习领域借鉴过来的，目前常用的主要包括线性降维的PCA（principal component analysis，主成分分析）、非线性降维的tSNE（t-Distribution Stochastic Neighbour Embedding）与UMAP（Uniform Manifold Approximation and Projection for Dimension Reduction）等。</p>
-<ul>
-<li>PCA：</li>
+<h1 id="2-Buffer-Prepare"><a href="#2-Buffer-Prepare" class="headerlink" title="2 Buffer Prepare"></a>2 Buffer Prepare</h1><ul>
+<li>75% EtOH (in DEPC H<sub>2</sub>O)</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://book.ncrnalab.org/teaching/。" title="清华大学鲁志实验室Bioinformatics Tutorial">PCA的主要思想是找到k组线性组合，将n维特征投影到k维上，使得新的k维特征彼此正交，并且可以尽可能多的解释数据中的variation。这样得到新的k维特征就被称为k个主成分。k个主成分实际上对应着我们从输入数据估计出的协方差矩阵最大的k个特征值对应的特征向量。</a>PCA在在生物信息学分析中，是样本量不多的bulk RNA-seq转录组的可视化最常用的方法。</p>
-<p>为了便于让大家更好的简单理解什么是PCA，在这里我用两张PPT做简单说明：</p>
-<p><img src="https://files.mdnice.com/user/41526/3e86e7e1-be66-42c0-9807-f98615bd354a.png" alt=""></p>
-<p><img src="https://files.mdnice.com/user/41526/127f14dc-0d59-4452-b38e-91c959362d4f.png" alt=""></p>
-<ul>
-<li>tSNE与UMAP</li>
-</ul>
-<p>t-SNE与UMAP主要的优势就是保持非线性的局部结构的能力，比较适用于样本量较大，样本之间相互关系比较复杂的数据，所以在单细胞转录组的可视化中有大量应用。需要注意的是，这两种将为的方法通常只应用于数据的可视化。</p>
-<h1 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2 代码实现"></a>2 代码实现</h1><p>在本部分我将从数据的预处理到降维分析可视化的过程用R语言进行展示。</p>
-<h2 id="2-1-数据预处理"><a href="#2-1-数据预处理" class="headerlink" title="2.1 数据预处理"></a>2.1 数据预处理</h2><p>在进行降维分析之前，首先必须要做的一个工作就是数据的预处理，其中非常关键的一步就是scale（有时可以翻译为“归一化”）。简单来说，未经处理的数据可能具有非常大的变异度，这可能会对后续的分析产生影响，具体来说，以RNA-seq为例：不同的基因具有不同的表达水平，有些基因表达水平很高，有的很低；同一个基因在不同的生物学条件下表达的差异也不同，有的“岿然不动”，有的“闻风而动”，甚至具有非常大的差异。用鲁志老师的tutorial来说，对涉及距离计算的模型而言，在实际应用中，不同特征的数值大小不同，会在求距离时造成很大的影响。例如，一个基因的表达量很高，另一个基因的表达量很低，如果不进行数据的归一化，表达量高的基因就会主导距离的计算。</p>
-<p>在R语言中我们常用的就是使用z-score里进行归一化：</p>
-<script type="math/tex; mode=display">
-zscore(x_{ij})=\frac{x_{ij}-\mu_{ij}}{\sigma_i}</script><p>这里我们使用鸢尾花数据集来进行演示，该数据集为R包datasets的一个内置数据集，记录了150朵鸢尾花不同的特征及其种属，一般可以直接加载使用即可：</p>
-<pre class=" language-lang-r"><code class="language-lang-r">head(iris)
-
-#  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-#1          5.1         3.5          1.4         0.2  setosa
-#2          4.9         3.0          1.4         0.2  setosa
-#3          4.7         3.2          1.3         0.2  setosa
-#4          4.6         3.1          1.5         0.2  setosa
-#5          5.0         3.6          1.4         0.2  setosa
-#6          5.4         3.9          1.7         0.4  setosa
-</code></pre>
-<p>利用R语言的<code>scale()</code>函数进行归一化：</p>
-<pre class=" language-lang-r"><code class="language-lang-r">iris.scale <- scale(as.matrix(iris[, 1:4]),
-                    scale = TRUE,
-                    center = TRUE)
-</code></pre>
-<h2 id="2-2-数据降维"><a href="#2-2-数据降维" class="headerlink" title="2.2 数据降维"></a>2.2 数据降维</h2><h3 id="2-2-1-PCA"><a href="#2-2-1-PCA" class="headerlink" title="2.2.1 PCA"></a>2.2.1 PCA</h3><p>首先是PCA，这里介绍两种方法，分别基于stats包的<code>prcomp()</code>函数与FactoMineR包的<code>PCA()</code>函数。</p>
-<pre class=" language-lang-r"><code class="language-lang-r">#use prcomp()
-pca.res <- prcomp(iris.scale, scale. = FALSE, center = FALSE)
-#set FALSE, because we have already done
-plot.data <- cbind(as.data.frame(pca.res$x[, 1:2]),
-                   Species = iris$Species)
-library(ggplot2)
-ggplot(data = plot.data, aes(PC1, PC2)) +
-  geom_point(aes(color = Species)) +
-  theme_test()
-</code></pre>
-<p><img src="https://files.mdnice.com/user/41526/a01dff3d-7c1f-4c32-a7c6-1ff9ad7bfe25.png" alt=""><br>我们可以看到同一个物种的不同个体基本都被聚在了一起，而不同物种之间“泾渭分明”。（versicolor和virginica未被很好分开是因为这两个物种本身就具有相似的特征）</p>
-<pre class=" language-lang-r"><code class="language-lang-r">#use PCA()
-#install.packages('factoextra')
-#install.packages('FactoMineR')
-library(factoextra)
-library(FactoMineR)
-
-pca.res <- PCA(iris.scale, 
-               scale.unit = TRUE,
-               graph = FALSE)
-fviz_pca_ind(pca.res,
-             geom = 'point',
-             habillage = iris$Species,
-             addEllipses = TRUE) +
-  theme_test()
-</code></pre>
-<p><img src="https://files.mdnice.com/user/41526/965ee887-25f2-483e-a6bb-bdf1a1c7e0d8.png" alt=""><br>结果类似，不过看起来好像PC2反过来了。可以看到这里有两个数字：73%和22.9%，你可以简单理解为每个主成分能够解释的数据变异度比例，根据前面的PPT，理论上来讲PC1解释度最高，PC2次之……所以我们尝试看一下PC3和PC4对鸢尾花个体的区分度如何：</p>
-<pre class=" language-lang-r"><code class="language-lang-r">fviz_pca_ind(pca.res,
-             axes = c(3, 4),
-             geom = 'point',
-             habillage = iris$Species,
-             addEllipses = TRUE) +
-  theme_test()
-</code></pre>
-<p><img src="https://files.mdnice.com/user/41526/0b239888-92d4-49f0-b28e-cb36c462a069.png" alt=""><br>可以说基本没有分开原因就在于这两个主成分没有很好的解释整个数据集的变异度（3.7%，0.5%）。</p>
-<p>看吧，所以我们可以用这种PCA的方法来检验bulk RNA-seq不同生物学条件下的不同生物学重复的相似性和差异性，当然DESeq2这个包本身也可以帮你来绘制PCA图，但我们还是要理解背后的原理。</p>
-<h3 id="2-2-2-tSNE"><a href="#2-2-2-tSNE" class="headerlink" title="2.2.2 tSNE"></a>2.2.2 tSNE</h3><pre class=" language-lang-r"><code class="language-lang-r">#install.packages('Rtsne')
-library(Rtsne)
-tsne.res <- Rtsne(iris.scale, check_duplicates = FALSE)
-plot.data <- cbind(as.data.frame(tsne.res$Y[, 1:2]),
-                   Species = iris$Species)
-colnames(plot.data)[1:2] <- c('tSNE_1', 'tSNE_2')
-ggplot(data = plot.data, aes(tSNE_1, tSNE_2)) +
-  geom_point(aes(color = Species)) +
-  theme_test()
-</code></pre>
-<p><img src="https://files.mdnice.com/user/41526/ef427c8c-7d60-4f31-96bb-c67d45f1900d.png" alt=""></p>
-<p>可以看到相同物种的不同样本被很好的聚在了一起。</p>
-<h3 id="2-2-3-UMAP"><a href="#2-2-3-UMAP" class="headerlink" title="2.2.3 UMAP"></a>2.2.3 UMAP</h3><pre class=" language-lang-r"><code class="language-lang-r">#install.packages('umap')
-library(umap)
-umap.res <- umap(iris.scale)
-plot.data <- cbind(as.data.frame(umap.res$layout[, 1:2]),
-                   Species = iris$Species)
-colnames(plot.data)[1:2] <- c('UMAP_1', 'UMAP_2')
-ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
-  geom_point(aes(color = Species)) +
-  theme_test()
-</code></pre>
-<p><img src="https://files.mdnice.com/user/41526/66988b00-4895-49dc-865a-51c8aefd3042.png" alt=""></p>
-<h1 id="3-写在最后"><a href="#3-写在最后" class="headerlink" title="3 写在最后"></a>3 写在最后</h1><p>推荐一个学习网站：清华大学鲁志实验室的Bioinformatics Tutorial，点击原文即可跳转哦！</p>
+<h1 id="3-Experimental-Procedure"><a href="#3-Experimental-Procedure" class="headerlink" title="3 Experimental Procedure"></a>3 Experimental Procedure</h1><p><strong><em>Caution: this protocol is only applicable for cell RNA extraction.</em></strong> For tissue sample, you should follow another.</p>
+<h2 id="3-1-Cell-lysis"><a href="#3-1-Cell-lysis" class="headerlink" title="3.1 Cell lysis"></a>3.1 Cell lysis</h2><p><strong>Use 6-cell plate and FreeZol Reagent as example.</strong></p>
+<ol>
+<li>Add 500uL FreeZol to the cells and incubate at R.T. for 5 min;</li>
+<li>Use 1mL pipettor to mix the system well and then transfer to a RNase-free tube;</li>
+<li>Incubate at R.T. for 5 min.</li>
+</ol>
+<h2 id="3-2-RNA-isoloation"><a href="#3-2-RNA-isoloation" class="headerlink" title="3.2 RNA isoloation"></a>3.2 RNA isoloation</h2><ol>
+<li><p>Add 150uL Dilution Buffer to the system and then vortex for 5 s;</p>
+</li>
+<li><p>Incubate at R.T. for 5 min;</p>
+</li>
+<li><p>Centrifuge for 15 min at 12,000xg, 4 degreeC;</p>
+</li>
+<li><p>Gently transfer the supernatant to a new RNase-free tube (~500 uL);</p>
+</li>
+<li><p>Add same volume of 100% IPA to the supernatant, shake by hand to mix well;</p>
+</li>
+<li><p><strong><em>[Optional]</em></strong> <em>Incubate at -20 degreeC at least 30 min;</em></p>
+</li>
+<li><p>Centrifuge for 10 min at 12,000xg, 4 degreeC;</p>
+</li>
+<li><p>Gently remove the supernatant without disturbing the RNA pellet;</p>
+</li>
+<li><p>Gently add 1mL 75% EtOH (in DEPC H<sub>2</sub>O) and invert up-and-down;</p>
+</li>
+<li><p>Centrifuge for 5 min at 12,000xg, 4 degreeC;</p>
+</li>
+<li><p>Repeat 8~10 again;</p>
+</li>
+<li><p>Gently remove the supernatant without disturbing the RNA pellet;</p>
+<p><em>Tips: here you can use flash to totally remove the residual EtOH, which may influence downstream experiment.</em></p>
+</li>
+<li><p>Air dry the RNA pellet for 5 min.</p>
+<p><em>Caution: not to let the RNA pellet dry completely as this will greatly decrease its solubility.</em></p>
+</li>
+<li><p>Dissolve RNA with 50uL DEPC H<sub>2</sub>O and then use NanoDrop to check the concentration and quality;</p>
+<p><em>Note: ideally A<sub>260</sub></em>/A<sub>280</sub> &gt; 2.0 and A<sub>260</sub>/A<sub>230</sub> &gt; 2.2.</p>
+</li>
+<li><p>Store RNA at -80 degreeC and avoid repeated freeze-thaw.</p>
+</li>
+</ol>
 
                 
             </div>
@@ -587,7 +553,7 @@ ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/08/28/pca/">http://example.com/2023/08/28/pca/</a>
+                    <a href="http://example.com/2023/08/29/RNA-extract/">http://example.com/2023/08/29/RNA-extract/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -625,8 +591,12 @@ ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Advanced-math/">
-                                    <span class="chip bg-color">Advanced math</span>
+                                <a href="/tags/RNA-biology/">
+                                    <span class="chip bg-color">RNA biology</span>
+                                </a>
+                            
+                                <a href="/tags/Experimental-protocol/">
+                                    <span class="chip bg-color">Experimental protocol</span>
                                 </a>
                             
                         </div>
@@ -796,9 +766,72 @@ ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/08/29/RNA-extract/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="RNA_extract">
+                        
+                        <span class="card-title">RNA_extract</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/RNA-biology/" class="post-category">
+                                    RNA biology
+                                </a>
+                            
+                            <a href="/categories/Experiment/" class="post-category">
+                                    Experiment
+                                </a>
+                            
+                            <a href="/categories/Experiment/RNA/" class="post-category">
+                                    RNA
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/RNA-biology/">
+                        <span class="chip bg-color">RNA biology</span>
+                    </a>
+                    
+                    <a href="/tags/Experimental-protocol/">
+                        <span class="chip bg-color">Experimental protocol</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/08/29/math-1/">
                     <div class="card-image">
@@ -816,9 +849,9 @@ ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -836,56 +869,6 @@ ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
                     
                     <a href="/tags/Advanced-Math/">
                         <span class="chip bg-color">Advanced Math</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/08/28/pca/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Dimension Reduction and High dimensional Data Visualization">
-                        
-                        <span class="card-title">Dimension Reduction and High dimensional Data Visualization</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Advanced-math/" class="post-category">
-                                    Advanced math
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Advanced-math/">
-                        <span class="chip bg-color">Advanced math</span>
                     </a>
                     
                 </div>
@@ -1016,13 +999,6 @@ ggplot(data = plot.data, aes(UMAP_1, UMAP_2)) +
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
