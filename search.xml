@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>UCSC Track Hub</title>
+      <link href="/2023/08/31/ucsc-hub/"/>
+      <url>/2023/08/31/ucsc-hub/</url>
+      
+        <content type="html"><![CDATA[<p>Two sharp tools to visualize genome data are IGV and <a href="https://genome.ucsc.edu/">UCSC</a>, while the latter one is a web page which can be a potential source for us to share data with other efficiently. So how can we make full use of UCSC in data communication? This blog will tell you the basic tutorial for this topic.</p><div align=center><img src="1.jpg" width=100%></div><h1 id="1-What-are-track-hubs"><a href="#1-What-are-track-hubs" class="headerlink" title="1 What are track hubs?"></a>1 What are track hubs?</h1><p>Track hubs are web-accessible directories of genomic data that can be viewed on the UCSC Genome Browser. Track hubs can be displayed on genomes that UCSC directly supports, or on your own sequence. Hubs are a useful tool for visualizing a large number of genome-wide data sets. For example, a project that has produced several wiggle plots of data can use the hub utility to organize the tracks into composite and super-tracks, making it possible to show the data for a large collection of tissues and experimental conditions in a visually elegant way, similar to how the ENCODE native data tracks are displayed in the browser.</p><p>The track hub utility allows efficient access to data sets from around the world through the familiar Genome Browser interface. Browser users can display tracks from any public track hub that has been registered with UCSC.</p><h1 id="2-Set-your-own-track-hubs"><a href="#2-Set-your-own-track-hubs" class="headerlink" title="2 Set your own track hubs"></a>2 Set your own track hubs</h1><p>In my research field, I only use UCSC to visualize the genome data. So in this part you can only prepare two compartment to create your own track hub.</p><ul><li>one or more data sets formatted in one of the compressed binary index formats supported by the Genome Browser: bigBed, bigBarChart, bigGenePred, bigNarrowPeak, bigPsl, bigChain, bigInteract, bigMaf, bigWig, BAM, CRAM, HAL, hic or VCF.</li><li>a set of text files that specify properties for the track hub and for each of the data tracks within it.</li></ul><p>There is now a <code>useOneFile on</code> hub setting that allows the hub properties to be specified in a single file. Here I will show you how to combine various configuration information into a single file and deposit your data sets in <a href="https://usegalaxy.org/">Galaxy</a>, a free web space.</p><h2 id="2-1-Prepare-configuration-file"><a href="#2-1-Prepare-configuration-file" class="headerlink" title="2.1 Prepare configuration file"></a>2.1 Prepare configuration file</h2><p>The basic properties of configuration file should have three parts: hub information, genome and track description.</p><h3 id="2-1-1-Hub-information"><a href="#2-1-1-Hub-information" class="headerlink" title="2.1.1 Hub information"></a>2.1.1 Hub information</h3><p>This part contains up to six fields that define the properties of the track hub (here I only show you five).</p><pre><code>hub            &lt;hub_name&gt;shortLabel    &lt;hub_short_label&gt;longLabel    &lt;hub_long_label&gt;email        &lt;email_address&gt;useOneFile    on</code></pre><p><em>hub</em> - a single-word name of the directory containing the track hub files.</p><p><em>shortLabel</em> - the short name for the track hub. Suggested maximum length is 17 characters. Displayed as the hub name on the Track Hubs page and the track group name on the browser tracks page.</p><p><em>longLabel</em> - a longer descriptive label for the track hub. Suggested maximum length is 80 characters. Displayed in the description field on the Track Hubs page.</p><p><em>email</em> - the contact to whom questions regarding the track hub should be directed.</p><p><em>useOneFile on</em> - only use this setting if your hub is displaying one genome and if you wish to put all information into only one file: hub.txt.</p><p>This is a simple example:</p><pre><code>hub            H3K4me3_hubshortLabel    H3K4me3 hublongLabel    UCSC track hub for H3K4me3 ChIP dataemail        skm@smail.nju.edu.cnuseOneFile    on</code></pre><h3 id="2-2-2-Genome"><a href="#2-2-2-Genome" class="headerlink" title="2.2.2 Genome"></a>2.2.2 Genome</h3><p>For me, I always use hg38/GRCh38 as the reference genome. So I will only simply add the following single line to hub.txt.</p><pre><code>genome        hg38</code></pre><h3 id="2-2-3-Track-description"><a href="#2-2-3-Track-description" class="headerlink" title="2.2.3 Track description"></a>2.2.3 Track description</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Genome Biology </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Genome biology </tag>
+            
+            <tag> UCSC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cell culture</title>
       <link href="/2023/08/29/cell-culture/"/>
       <url>/2023/08/29/cell-culture/</url>
