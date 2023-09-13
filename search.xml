@@ -92,9 +92,9 @@
       
       <categories>
           
-          <category> RNA biology </category>
-          
           <category> Experiment </category>
+          
+          <category> RNA biology </category>
           
           <category> RNA </category>
           
@@ -103,9 +103,9 @@
       
         <tags>
             
-            <tag> RNA biology </tag>
-            
             <tag> Experimental protocol </tag>
+            
+            <tag> RNA biology </tag>
             
         </tags>
       
