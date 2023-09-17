@@ -440,7 +440,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    519
+                    561
                 </div>
                 
 
@@ -492,23 +492,36 @@ f'(x) &= \lim_{\Delta x\rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
 &=-\lim_{\Delta x\rightarrow 0}\frac{f(-x-\Delta x)-f(x)}{-\Delta x} \\
 &=-f'(-x)
 \end{aligned}</script><p>同理可证若一个奇函数处处可导，其导函数也一定为偶函数。</p>
-</li>
-<li><p>微分</p>
+<ul>
+<li>常见函数的求导公式<ul>
+<li>$(x^\lambda)’=\lambda x^{\lambda -1}$；</li>
+<li>$(a^x)’ = a^x\ln a$；</li>
+<li>$(\log_a|x|)’ = \frac{1}{x\ln a}$；</li>
+<li>$(\sin x)’ = \cos x$；</li>
+<li>$(\cos x)’ = -\sin x$；</li>
+<li>$(\tan x)’ = \sec^2x$；</li>
+</ul>
 </li>
 </ul>
-<p>​        若$y=f(x)$在$x=a$的某个邻域内有定义，且存在常数$A$使得当$\Delta x\rightarrow 0$时有：</p>
+</li>
+</ul>
+<h1 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h1><ul>
+<li><p>微分</p>
+<p>若$y=f(x)$在$x=a$的某个邻域内有定义，且存在常数$A$使得当$\Delta x\rightarrow 0$时有：</p>
 <script type="math/tex; mode=display">
-\Delta y = f(a+\Delta x) - f(a) = A\Delta x + \omicron(\Delta x)</script><p>​        则称$f(x)$在$x=a$处可微。</p>
-<p>​        下面证明$A=f’(a)$：</p>
+\Delta y = f(a+\Delta x) - f(a) = A\Delta x + \omicron(\Delta x)</script><p>则称$f(x)$在$x=a$处可微。</p>
+<p>下面证明$A=f’(a)$：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 f'(a) = \lim_{\Delta x\rightarrow0}\frac{\Delta y}{\Delta x} &= \lim_{\Delta x\rightarrow0}\frac{A\Delta x + \omicron(\Delta x)}{\Delta x} \\
 &=\lim_{\Delta x\rightarrow0}A+\frac{\omicron(\Delta x)}{\Delta x} \\
 &=A+\lim_{\Delta x\rightarrow0}\frac{\omicron(\Delta x)}{\Delta x} \\
 &=A
-\end{aligned}</script><p>​        $f(x)$在$x=a$处可微的充要条件为$f(x)$在$x=a$处可导，此时称：</p>
+\end{aligned}</script><p>$f(x)$在$x=a$处可微的充要条件为$f(x)$在$x=a$处可导，此时称：</p>
 <script type="math/tex; mode=display">
-\Delta y \approx dy = f'(a)\Delta x = f'(a)dx</script><p>​        为$f(x)$在$x=a$处的微分。在这里的近似中，我们忽略了$\omicron(\Delta x)$。</p>
+\Delta y \approx dy = f'(a)\Delta x = f'(a)dx</script><p>为$f(x)$在$x=a$处的微分。在这里的近似中，我们忽略了$\omicron(\Delta x)$。</p>
+</li>
+</ul>
 
                 
             </div>
