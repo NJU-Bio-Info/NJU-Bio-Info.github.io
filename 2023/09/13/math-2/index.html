@@ -433,21 +433,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-17
+                    2023-09-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    561
+                    931
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -493,13 +493,60 @@ f'(x) &= \lim_{\Delta x\rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
 &=-f'(-x)
 \end{aligned}</script><p>同理可证若一个奇函数处处可导，其导函数也一定为偶函数。</p>
 <ul>
-<li>常见函数的求导公式<ul>
+<li><p>常见函数的求导公式</p>
+<ul>
 <li>$(x^\lambda)’=\lambda x^{\lambda -1}$；</li>
 <li>$(a^x)’ = a^x\ln a$；</li>
 <li>$(\log_a|x|)’ = \frac{1}{x\ln a}$；</li>
 <li>$(\sin x)’ = \cos x$；</li>
 <li>$(\cos x)’ = -\sin x$；</li>
 <li>$(\tan x)’ = \sec^2x$；</li>
+<li>$(\cot x)’ = -\csc ^2x$；</li>
+<li>$(\sec x)’ = \sec x \tan x$；</li>
+<li>$(\csc x)’ = -\csc x\cot x$；</li>
+<li>$(\arcsin x)’ = \frac{1}{\sqrt{1-x^2}}$；（稍后给出推导过程）</li>
+<li>$(\arccos x)’ = -\frac{1}{\sqrt{1-x^2}}$；（稍后给出推导过程）</li>
+<li>$(\arctan x)’ = \frac{1}{1+x^2}$；（稍后给出推导过程）</li>
+<li>$(arccotx)’ = -\frac{1}{1+x^2}$。（稍后给出推导过程）</li>
+</ul>
+</li>
+<li><p>求导法则</p>
+<ul>
+<li><p>导数四则运则</p>
+<p>$(u\pm v)’ = u’ \pm v’$；</p>
+<p>$(uv)’ = u’v \pm uv’$；</p>
+<p>$(cu)’ = cu’, c \in R$；</p>
+<p>$(\frac{u}{v})’ = \frac{u’v - uv’}{v^2}, v \ne 0$。</p>
+</li>
+<li><p>复合函数求导法则</p>
+<p>$\frac{d}{dx}f(\varphi(x)) = f’(\varphi(x))\varphi’(x)$</p>
+</li>
+<li><p>反函数求导</p>
+<p>$x=f(y)$在$I_y$内单调可导，且$f’(y)\ne0$，则反函数$y = f^{-1}(x)$的导数为：$[f^{-1}(x)]’ = \frac{1}{f’(y)}$。</p>
+<p><strong>下面使用反函数求导推导$y = \arcsin x$的导数</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\because y = \arcsin x \\
+\therefore x = \sin y \\
+\text{这里}:
+\frac{dy}{dx} = \frac{1}{\frac{dx}{dy}}  = \frac{1}{\cos y}\\
+\text考虑到y为三角形的一个内角，其对边为x，斜边为1，故其另一邻边长为\sqrt{1-x^2}; \\
+\therefore \cos y = \frac{1}{\sqrt{1-x^2}} \\
+\therefore (\arcsin x)' = \frac{dy}{dx} = \frac{1}{\sqrt{1-x^2}}
+\end{array}</script></li>
+<li><p>隐函数求导</p>
+<p>直接对$x$进行求导即可。</p>
+<p>例：若$e^y + xy -e = 0$，求$\frac{dy}{dx}$。</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\text两边同时对x进行求导:\\
+e^yy' + y + xy' = 0 \\
+(e^y+x)y' + y = 0 \\
+y'=-\frac{y}{e^y+x}
+\end{array}</script></li>
+<li><p>参数方程求导</p>
+<p>若$\begin{cases}x = \varphi(t)\\y = \psi(t)\end{cases}$，$t$为参数，确定$y$为$x$的函数，则$\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}$。</p>
+</li>
 </ul>
 </li>
 </ul>
