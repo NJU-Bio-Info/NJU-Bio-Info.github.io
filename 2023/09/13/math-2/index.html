@@ -433,21 +433,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-26
+                    2023-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    931
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    8 分
                 </div>
                 
 
@@ -565,6 +565,69 @@ f'(a) = \lim_{\Delta x\rightarrow0}\frac{\Delta y}{\Delta x} &= \lim_{\Delta x\r
 \end{aligned}</script><p>$f(x)$在$x=a$处可微的充要条件为$f(x)$在$x=a$处可导，此时称：</p>
 <script type="math/tex; mode=display">
 \Delta y \approx dy = f'(a)\Delta x = f'(a)dx</script><p>为$f(x)$在$x=a$处的微分。在这里的近似中，我们忽略了$\omicron(\Delta x)$。</p>
+<ul>
+<li><p>微分中值定理</p>
+<ul>
+<li><p>费马定理</p>
+<p>设函数$f(x)$在$x=a$的某个邻域$I$内有定义，$f(a)$为$f(x)$在$I$上的最值，且$f(x)$在$x=a$处可导，则必有$f’(x) = 0$。</p>
+</li>
+<li><p>罗尔定理</p>
+<p>若函数$f(x)$满足：a. 在$[a,b]$连续；b. 在$(a,b)$可导；c. $f(a)=f(b)$，则至少存在一点$\xi \in (a,b)$使得$f’(\xi)=0$。</p>
+</li>
+<li><p>拉格朗日中值定理</p>
+<p>若函数$f(x)$满足：a. 在$[a,b]$连续；b. 在$(a,b)$可导，则$\exists \xi \in (a,b)$使得$f’(\xi) = \frac{f(a)-f(b)}{a-b}$。</p>
+</li>
+<li><p>柯西中值定理</p>
+<p>若函数$f(x)$与$g(x)$皆在$[a,b]$连续且在$(a,b)$可导，且$g’(x)\ne0$，则$\exists \xi \in (a,b)$使得$\frac{f’(\xi)}{g’(\xi)}=\frac{f(a)-f(b)}{g(a)-g(b)}$。</p>
+</li>
+</ul>
+</li>
+<li><p>四大中值定理证明</p>
+<ul>
+<li><p>费马定理</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+此处证明当f(a)为函数f(x)在I上的最大值时的情形;\\
+由于f(x)在x=a处可导,则f(x)在x=a处的左右导数必定相等;\\
+f_{-}'(a) = \lim_{\Delta x \rightarrow 0^-}\frac{f(a+\Delta x)-f(a)}{\Delta x} \geq 0 \\
+f_{+}'(a) = \lim_{\Delta x \rightarrow 0^+}\frac{f(a+\Delta x)-f(a)}{\Delta x} \leq 0 \\
+要使f_{-}'(a)=f_{+}'(a),则必须有f_{-}'(a)=f_{+}'(a)=f'(a) = 0,得证.
+\end{array}</script></li>
+<li><p>罗尔定理</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+根据连续函数的最值定理,由于f(x)在[a,b]连续,则f(x)在[a,b]上必定存在最大值M和最小值m;\\
+下面分情况讨论:\\
+a. 若M=m,则f(x)在[a,b]内恒为常数,则必定存在一点\xi使得f'(\xi)=0;\\
+b. 若M在端点处取得,而m不在端点,则根据费马定理,必定\exists \xi\in(a,b),f(\xi)=m，f'(\xi)=0;\\
+c. 若m在端点处取得,而M不在端点,则根据费马定理,必定\exists \xi\in(a,b),f(\xi)=M，f'(\xi)=0;\\
+d. 若M和m都不在端点取得,则根据费马定理,必定\exists \xi\in(a,b),f(\xi)=M或m,f'(\xi)=0,得证.
+\end{array}</script></li>
+<li><p>拉格朗日中值定理</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+要证明f'(\xi)=\frac{f(a)-f(b)}{a-b};\\
+即证f(a)-f(b)-f'(\xi)(a-b)=0;\\
+构造新函数g(x) = [f(a)-f(b)]x-f(x)(a-b);\\
+g(a) = [f(a)-f(b)]a-f(a)(a-b) = bf(a)-af(b);\\
+g(b) = [f(a)-f(b)]b-f(b)(a-b) = bf(a)-af(b);\\
+显然g(a)=g(b)，则根据罗尔定理，必定\exists \xi\in(a,b)使得g'(\xi) = [f(a)-f(b)]-f'(\xi)(a-b)=0;\\
+即f'(\xi)=\frac{f(a)-f(b)}{a-b},得证.
+\end{array}</script></li>
+<li><p>柯西中值定理</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+要证明\frac{f'(\xi)}{g'(\xi)}=\frac{f(a)-f(b)}{g(a)-g(b)};\\
+即证f'(\xi)-g'(\xi)\frac{f(a)-f(b)}{g(a)-g(b)} = 0;\\
+构造新函数h(x) = f(x)-g(x)\frac{f(a)-f(b)}{g(a)-g(b)};\\
+h(a) = f(a)-g(a)\frac{f(a)-f(b)}{g(a)-g(b)}=\frac{g(a)f(b)-f(a)g(b)}{g(a)-g(b)};\\
+h(b) = f(b)-g(b)\frac{f(a)-f(b)}{g(a)-g(b)}=\frac{g(a)f(b)-f(a)g(b)}{g(a)-g(b)};\\
+显然h(a)=h(b)，则根据罗尔定理，必定\exists \xi\in(a,b)使得f'(\xi)-g'(\xi)\frac{f(a)-f(b)}{g(a)-g(b)}=0;\\
+即\frac{f'(\xi)}{g'(\xi)}=\frac{f(a)-f(b)}{g(a)-g(b)},得证.
+\end{array}</script></li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 
