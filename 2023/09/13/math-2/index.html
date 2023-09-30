@@ -433,14 +433,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-27
+                    2023-10-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.8k
                 </div>
                 
 
@@ -628,6 +628,43 @@ h(b) = f(b)-g(b)\frac{f(a)-f(b)}{g(a)-g(b)}=\frac{g(a)f(b)-f(a)g(b)}{g(a)-g(b)};
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<h1 id="导数与微分的应用"><a href="#导数与微分的应用" class="headerlink" title="导数与微分的应用"></a>导数与微分的应用</h1><ul>
+<li><p>泰勒展开 （Taylor expansion）</p>
+<p>首先介绍魏尔斯特拉斯定理（Weierstrass定理）：</p>
+<font face="楷体">设函数$f(x)$在闭区间$[a,b]$上连续，则存在多项式序列$\{P_n(x)\}$在$[a,b]$上一致收敛于$f(x)$。也就是对任意给定的$\varepsilon > 0$，存在多项式$P(x)$使得$|P(x)-f(x)|<\varepsilon$，对一切$x\in[a,b]$成立。</font>
+
+<p>现在，若函数$f(x)$在$x=a$的某邻域$I$上$n+1$阶可导，则对于$\forall x \in I$根据魏尔斯特拉斯定理：</p>
+<script type="math/tex; mode=display">
+f(x) = a_0+a_1(x-a)+a_2(x-a)^2+\cdots+a_n(x-a)^n+R_n(x)</script><p>其中$R_n(x)$表示逼近的误差，下面对前面不含误差的部分求$n$阶导：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f'(x) &= a_1 + 1\cdot2a_2(x-a) + 3a_3(x-a)^2 + \cdots + na_n(x-a)^{(n-1)} \\
+f''(x) &= 1\cdot2\cdot a_2 + 1\cdot2\cdot3\cdot a_3(x-a) + \cdots + (n-1)\cdot n\cdot (x-a)^{(n-2)} \\
+f'''(x) &= 1\cdot2\cdot3\cdot a_3 + 1\cdot2\cdot3\cdot4\cdot (x-a) + \cdots + (n-2)\cdot(n-1)\cdot n\cdot (x-a)^{(n-3)}\\
+\cdots \\
+f^{(n)}(x) &= 1\cdot2\cdot3\cdots\cdot n\cdot a_n
+\end{aligned}</script><p>再令所有的$x=a$，就有：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a_0 &= f(a) \\
+a_1 &= f'(a) \\
+a_2 &= \frac{f''(a)}{2!}\\
+a_3 &= \frac{f'''(a)}{3!}\\
+\cdots \\
+a_n &= \frac{f^{(n)}(a)}{n!}
+\end{aligned}</script><p>所以函数就可以表示为：</p>
+<script type="math/tex; mode=display">
+f(x) = f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f'''(a)}{3!}(x-a)^3+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)</script><p>或者简单表示为：</p>
+<script type="math/tex; mode=display">
+f(x) = \sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k + R_n(x)</script><p>此式称为$f(x)$在$x=a$的$n$阶泰勒展开式，其中$R_n(x)$有两种表示方法：</p>
+<ul>
+<li>皮亚诺余项：$R_n(x) = o((x-a)^n)$；</li>
+<li>拉格朗日余项：$R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{(n+1)}$，其中$\xi$介于$x$与$a$之间。</li>
+</ul>
+</li>
+<li><p>洛必达法则</p>
 </li>
 </ul>
 
