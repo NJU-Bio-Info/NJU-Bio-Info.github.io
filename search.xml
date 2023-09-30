@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>wb</title>
+      <link href="/2023/09/28/wb/"/>
+      <url>/2023/09/28/wb/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Advanced Math - 2</title>
       <link href="/2023/09/13/math-2/"/>
       <url>/2023/09/13/math-2/</url>
@@ -92,9 +105,9 @@
       
       <categories>
           
-          <category> Experiment </category>
-          
           <category> RNA biology </category>
+          
+          <category> Experiment </category>
           
           <category> RNA </category>
           
@@ -103,9 +116,9 @@
       
         <tags>
             
-            <tag> Experimental protocol </tag>
-            
             <tag> RNA biology </tag>
+            
+            <tag> Experimental protocol </tag>
             
         </tags>
       
